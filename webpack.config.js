@@ -7,7 +7,7 @@ module.exports = {
 
     entry: "./src/main.ts",
     output: {
-      path: path.resolve(__dirname, 'docs'),
+        path: path.resolve(__dirname, "docs"),
     },
 
     module: {
@@ -45,6 +45,7 @@ module.exports = {
 
     devServer: {
         contentBase: outputPath,
+        contentBasePublicPath: "/yamasaki-san",
         historyApiFallback: {
             index: "index.html",
         },

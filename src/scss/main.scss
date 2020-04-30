@@ -1,3 +1,10 @@
 .main {
     padding-top: 64px;
+    max-width: 450px;
+    margin: 0 auto;
+
+    .answer {
+        margin-top: 32px;
+        padding: 8px;
+    }
 }

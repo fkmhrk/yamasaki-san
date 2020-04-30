@@ -1,11 +1,19 @@
 <!-- prettier-ignore-attribute -->
 <div class="mdl-layout mdl-js-layout mdl-color--grey-100 main">
     <div class="mdc-card">
-        <button on-click="choose">ごはんを選んでもらう</button>
+        <div class="mdc-card__primary-action">
+            <h2 class="demo-card__title mdc-typography mdc-typography--headline6">ごはん何にしよう</h2>
+        </div>
+        <div class="mdc-card__actions">
+            <Button class="mdc-card__action mdc-card__action--button"
+                on-click="choose" accent>
+                ごはんを選んでもらう
+            </Button>
+        </div>
     </div>
     {{#if food != null}}
-    <div class="mdc-card">
-        <p>{{food.name}}は、どうかな？</p>
+    <div class="mdc-card answer">
+        <p class="mdc-typography mdc-typography--body1">{{food.name}}は、どうかな？</p>
     </div>
     {{/if}}
 </div>
