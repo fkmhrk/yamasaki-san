@@ -8,7 +8,7 @@ import LoginPage from "./pages/LoginPage";
 
 export default class Router implements IRouter {
     constructor(app: IApplication) {
-        page("/", () => {
+        page("/yamasaki-san/index.html", () => {
             //this.showPage(new TopPage(app));
             this.showPage(new LoginPage(app));
         });
