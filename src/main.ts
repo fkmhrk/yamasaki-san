@@ -16,6 +16,7 @@ const services = new Services(models);
 const app = new Application(
     new XHRClient("text"),
     services,
+    models,
     (a: IApplication) => {
         return new Router(a);
     },
