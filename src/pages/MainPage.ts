@@ -24,32 +24,23 @@ export default class MainPage implements IPage {
             },
             data: {
                 inProgress: false,
-                canLogin: (email: string, password: string) => {
-                    return email.length > 0 && password.length > 0;
-                },
             },
             on: {
-                login: () => {
-                    this.login();
-                },
+                choose: () => this.choose(),
             },
         });
     }
 
-    private async login() {
-        const email = this.ractive.get("email");
-        const password = this.ractive.get("password");
-
+    private async choose() {
         this.ractive.set("inProgress", true);
-
         try {
-            const result = await this.app.services.account.login(
-                email,
-                password
-            );
-            this.ractive.set("inProgress", false);
+            const food = await this.app.models.food.chooseFood();
+            this.ractive.set({
+                inProgress: false,
+                food,
+            });
         } catch (e) {
-            this.ractive.set("inProgress", false);
+            console.log("Failed to choose");
         }
     }
 }

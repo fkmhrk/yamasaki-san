@@ -1,2 +1,11 @@
 <!-- prettier-ignore-attribute -->
-<div class="mdl-layout mdl-js-layout mdl-color--grey-100 main"></div>
+<div class="mdl-layout mdl-js-layout mdl-color--grey-100 main">
+    <div class="mdc-card">
+        <button on-click="choose">ごはんを選んでもらう</button>
+    </div>
+    {{#if food != null}}
+    <div class="mdc-card">
+        <p>{{food.name}}は、どうかな？</p>
+    </div>
+    {{/if}}
+</div>
