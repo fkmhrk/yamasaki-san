@@ -6,6 +6,9 @@ module.exports = {
     //mode: 'production',
 
     entry: "./src/main.ts",
+    output: {
+      path: path.resolve(__dirname, 'doc'),
+    },
 
     module: {
         rules: [
