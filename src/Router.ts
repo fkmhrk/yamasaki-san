@@ -3,14 +3,12 @@
 /// <reference path="./IApplication.ts" />
 /// <reference path="./pages/IPage.ts" />
 
-import TopPage from "./pages/TopPage";
-import LoginPage from "./pages/LoginPage";
+import MainPage from "./pages/MainPage";
 
 export default class Router implements IRouter {
     constructor(app: IApplication) {
         page("/yamasaki-san/index.html", () => {
-            //this.showPage(new TopPage(app));
-            this.showPage(new LoginPage(app));
+            this.showPage(new MainPage(app));
         });
     }
 

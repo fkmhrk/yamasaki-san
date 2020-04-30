@@ -805,6 +805,17 @@ eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./src/scss/main.scss":
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/scss/main.scss ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(true);\n// Module\nexports.push([module.i, \".main {\\n  padding-top: 64px;\\n}\", \"\",{\"version\":3,\"sources\":[\"/Users/fkm/dev/fkmsoft/web/yamasaki-san/src/scss/src/scss/main.scss\",\"/Users/fkm/dev/fkmsoft/web/yamasaki-san/src/scss/main.scss\"],\"names\":[],\"mappings\":\"AAAA;EACI,iBAAA;ACCJ\",\"file\":\"main.scss\",\"sourcesContent\":[\".main {\\n    padding-top: 64px;\\n}\\n\",\".main {\\n  padding-top: 64px;\\n}\"],\"sourceRoot\":\"\"}]);\n\n\n\n//# sourceURL=webpack:///./src/scss/main.scss?./node_modules/css-loader/dist/cjs.js??ref--5-1!./node_modules/sass-loader/dist/cjs.js??ref--5-2");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/api.js":
 /*!*****************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/api.js ***!
@@ -871,7 +882,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Application; });\n/* harmony import */ var _clients_Functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clients/Functions */ \"./src/clients/Functions.ts\");\n/// <reference path=\"./IApplication.ts\" />\n/// <reference path=\"./services/IServices.ts\" />\n/// <reference path=\"./clients/HTTPClient.ts\" />\n\nclass Application {\n    constructor(templateClient, services, routerFactory, drawerFactory, appBarFactory) {\n        this.templateClient = templateClient;\n        this.services = services;\n        this.router = routerFactory(this);\n        this.drawer = drawerFactory(this);\n        this.appBar = appBarFactory(this.drawer);\n        this.appBar.setHasDrawer(true);\n    }\n    start() {\n        this.router.start();\n    }\n    fetchTemplate(name) {\n        const url = `/pages/${name}`;\n        return this.templateClient\n            .send(\"GET\" /* GET */, url, {}, null)\n            .then(_clients_Functions__WEBPACK_IMPORTED_MODULE_0__[\"isStatus200\"])\n            .then(_clients_Functions__WEBPACK_IMPORTED_MODULE_0__[\"getBody\"]);\n    }\n    navigate(path) {\n        this.router.navigate(path);\n    }\n    redirect(path) {\n        this.router.redirect(path);\n    }\n}\n\n\n//# sourceURL=webpack:///./src/Application.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Application; });\n/* harmony import */ var _clients_Functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./clients/Functions */ \"./src/clients/Functions.ts\");\n/// <reference path=\"./IApplication.ts\" />\n/// <reference path=\"./services/IServices.ts\" />\n/// <reference path=\"./clients/HTTPClient.ts\" />\n\nclass Application {\n    constructor(templateClient, services, routerFactory, drawerFactory, appBarFactory) {\n        this.templateClient = templateClient;\n        this.services = services;\n        this.router = routerFactory(this);\n        this.drawer = drawerFactory(this);\n        this.appBar = appBarFactory(this.drawer);\n        this.appBar.setHasDrawer(true);\n    }\n    start() {\n        this.router.start();\n    }\n    fetchTemplate(name) {\n        const url = `/yamasaki-san/pages/${name}`;\n        return this.templateClient\n            .send(\"GET\" /* GET */, url, {}, null)\n            .then(_clients_Functions__WEBPACK_IMPORTED_MODULE_0__[\"isStatus200\"])\n            .then(_clients_Functions__WEBPACK_IMPORTED_MODULE_0__[\"getBody\"]);\n    }\n    navigate(path) {\n        this.router.navigate(path);\n    }\n    redirect(path) {\n        this.router.redirect(path);\n    }\n}\n\n\n//# sourceURL=webpack:///./src/Application.ts?");
 
 /***/ }),
 
@@ -883,7 +894,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Router; });\n/* harmony import */ var _pages_LoginPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/LoginPage */ \"./src/pages/LoginPage.ts\");\n/// <reference path=\"./IRouter.ts\" />\n/// <reference path=\"./page.d.ts\" />\n/// <reference path=\"./IApplication.ts\" />\n/// <reference path=\"./pages/IPage.ts\" />\n\nclass Router {\n    constructor(app) {\n        page(\"/\", () => {\n            //this.showPage(new TopPage(app));\n            this.showPage(new _pages_LoginPage__WEBPACK_IMPORTED_MODULE_0__[\"default\"](app));\n        });\n    }\n    start() {\n        page();\n    }\n    navigate(path) {\n        page(path);\n    }\n    redirect(path) {\n        page.redirect(path);\n    }\n    showPage(next) {\n        next.onCreate();\n    }\n}\n\n\n//# sourceURL=webpack:///./src/Router.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Router; });\n/* harmony import */ var _pages_MainPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/MainPage */ \"./src/pages/MainPage.ts\");\n/// <reference path=\"./IRouter.ts\" />\n/// <reference path=\"./page.d.ts\" />\n/// <reference path=\"./IApplication.ts\" />\n/// <reference path=\"./pages/IPage.ts\" />\n\nclass Router {\n    constructor(app) {\n        page(\"/yamasaki-san/index.html\", () => {\n            this.showPage(new _pages_MainPage__WEBPACK_IMPORTED_MODULE_0__[\"default\"](app));\n        });\n    }\n    start() {\n        page();\n    }\n    navigate(path) {\n        page(path);\n    }\n    redirect(path) {\n        page.redirect(path);\n    }\n    showPage(next) {\n        next.onCreate();\n    }\n}\n\n\n//# sourceURL=webpack:///./src/Router.ts?");
 
 /***/ }),
 
@@ -943,7 +954,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _App
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Models; });\n/* harmony import */ var _account_AccountRepository__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./account/AccountRepository */ \"./src/models/account/AccountRepository.ts\");\n/// <reference path=\"./IModels.ts\" />\n\nclass Models {\n    constructor(client, token) {\n        this.account = new _account_AccountRepository__WEBPACK_IMPORTED_MODULE_0__[\"default\"](client, token);\n    }\n}\n\n\n//# sourceURL=webpack:///./src/models/Models.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Models; });\n/* harmony import */ var _account_AccountRepository__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./account/AccountRepository */ \"./src/models/account/AccountRepository.ts\");\n/* harmony import */ var _food_FoodRepository__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./food/FoodRepository */ \"./src/models/food/FoodRepository.ts\");\n/// <reference path=\"./IModels.ts\" />\n\n\nclass Models {\n    constructor(client, token) {\n        this.account = new _account_AccountRepository__WEBPACK_IMPORTED_MODULE_0__[\"default\"](client, token);\n        this.food = new _food_FoodRepository__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n    }\n}\n\n\n//# sourceURL=webpack:///./src/models/Models.ts?");
 
 /***/ }),
 
@@ -959,6 +970,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/models/food/FoodRepository.ts":
+/*!*******************************************!*\
+  !*** ./src/models/food/FoodRepository.ts ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return FoodRepository; });\nconst foods = [\n    {\n        name: \"しょうゆラーメン\",\n    },\n    {\n        name: \"みそラーメン\",\n    },\n    {\n        name: \"とんこつラーメン\",\n    },\n    {\n        name: \"家系ラーメン\",\n    },\n    {\n        name: \"ちゃんぽん\",\n    },\n    {\n        name: \"皿うどん\",\n    },\n    {\n        name: \"やきそば\",\n    },\n    {\n        name: \"やきうどん\",\n    },\n    {\n        name: \"チャーハン\",\n    },\n    {\n        name: \"餃子\",\n    },\n    {\n        name: \"焼売\",\n    },\n    {\n        name: \"天津飯\",\n    },\n    {\n        name: \"タンメン\",\n    },\n    {\n        name: \"牛丼\",\n    },\n    {\n        name: \"豚丼\",\n    },\n    {\n        name: \"ポークカレー\",\n    },\n    {\n        name: \"ビーフカレー\",\n    },\n    {\n        name: \"チキンカレー\",\n    },\n    {\n        name: \"マトンカレー\",\n    },\n    {\n        name: \"カツカレー\",\n    },\n    {\n        name: \"わかめうどん\",\n    },\n    {\n        name: \"ざるうどん\",\n    },\n    {\n        name: \"たぬきうどん\",\n    },\n    {\n        name: \"肉うどん\",\n    },\n    {\n        name: \"ごぼう天うどん\",\n    },\n    {\n        name: \"わかめそば\",\n    },\n    {\n        name: \"肉そば\",\n    },\n    {\n        name: \"ごぼう天そば\",\n    },\n    {\n        name: \"焼き魚\",\n    },\n    {\n        name: \"お刺身\",\n    },\n    {\n        name: \"海鮮丼\",\n    },\n    {\n        name: \"寿司\",\n    },\n    {\n        name: \"ミートソーススパゲッティ\",\n    },\n    {\n        name: \"ナポリタン\",\n    },\n    {\n        name: \"ペペロンチーノ\",\n    },\n    {\n        name: \"マルゲリータ\",\n    },\n    {\n        name: \"デミグラスソースハンバーグ\",\n    },\n    {\n        name: \"和風ハンバーグ\",\n    },\n    {\n        name: \"ミラノ風ドリア\",\n    },\n    {\n        name: \"カツ丼\",\n    },\n    {\n        name: \"天丼\",\n    },\n    {\n        name: \"ビビン丼\",\n    },\n    {\n        name: \"サーロインステーキ\",\n    },\n];\nclass FoodRepository {\n    chooseFood() {\n        const index = Math.floor(Math.random() * foods.length);\n        return Promise.resolve(foods[index]);\n    }\n}\n\n\n//# sourceURL=webpack:///./src/models/food/FoodRepository.ts?");
+
+/***/ }),
+
 /***/ "./src/models/token/AccessToken.ts":
 /*!*****************************************!*\
   !*** ./src/models/token/AccessToken.ts ***!
@@ -971,15 +994,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./src/pages/LoginPage.ts":
-/*!********************************!*\
-  !*** ./src/pages/LoginPage.ts ***!
-  \********************************/
+/***/ "./src/pages/MainPage.ts":
+/*!*******************************!*\
+  !*** ./src/pages/MainPage.ts ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return LoginPage; });\n/* harmony import */ var ractive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ractive */ \"./node_modules/ractive/ractive.mjs\");\n/* harmony import */ var _views_TextField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../views/TextField */ \"./src/views/TextField.ts\");\n/* harmony import */ var _views_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/Button */ \"./src/views/Button.ts\");\nvar __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\n/// <reference path=\"./IPage.ts\" />\n\n\n\nclass LoginPage {\n    constructor(app) {\n        this.app = app;\n    }\n    onCreate() {\n        return __awaiter(this, void 0, void 0, function* () {\n            const t = yield this.app.fetchTemplate(\"login.html\");\n            this.ractive = new ractive__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n                el: \"#container\",\n                template: t,\n                components: {\n                    TextField: _views_TextField__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n                    Button: _views_Button__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n                },\n                data: {\n                    inProgress: false,\n                    canLogin: (email, password) => {\n                        return email.length > 0 && password.length > 0;\n                    },\n                },\n                on: {\n                    login: () => {\n                        this.login();\n                    },\n                },\n            });\n        });\n    }\n    login() {\n        return __awaiter(this, void 0, void 0, function* () {\n            const email = this.ractive.get(\"email\");\n            const password = this.ractive.get(\"password\");\n            this.ractive.set(\"inProgress\", true);\n            try {\n                const result = yield this.app.services.account.login(email, password);\n                this.ractive.set(\"inProgress\", false);\n            }\n            catch (e) {\n                this.ractive.set(\"inProgress\", false);\n            }\n        });\n    }\n}\n\n\n//# sourceURL=webpack:///./src/pages/LoginPage.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return MainPage; });\n/* harmony import */ var ractive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ractive */ \"./node_modules/ractive/ractive.mjs\");\n/* harmony import */ var _views_TextField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../views/TextField */ \"./src/views/TextField.ts\");\n/* harmony import */ var _views_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../views/Button */ \"./src/views/Button.ts\");\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_3__);\nvar __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\n/// <reference path=\"./IPage.ts\" />\n\n\n\n\nclass MainPage {\n    constructor(app) {\n        this.app = app;\n    }\n    onCreate() {\n        return __awaiter(this, void 0, void 0, function* () {\n            const t = yield this.app.fetchTemplate(\"main.html\");\n            this.ractive = new ractive__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n                el: \"#container\",\n                template: t,\n                components: {\n                    TextField: _views_TextField__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n                    Button: _views_Button__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n                },\n                data: {\n                    inProgress: false,\n                    canLogin: (email, password) => {\n                        return email.length > 0 && password.length > 0;\n                    },\n                },\n                on: {\n                    login: () => {\n                        this.login();\n                    },\n                },\n            });\n        });\n    }\n    login() {\n        return __awaiter(this, void 0, void 0, function* () {\n            const email = this.ractive.get(\"email\");\n            const password = this.ractive.get(\"password\");\n            this.ractive.set(\"inProgress\", true);\n            try {\n                const result = yield this.app.services.account.login(email, password);\n                this.ractive.set(\"inProgress\", false);\n            }\n            catch (e) {\n                this.ractive.set(\"inProgress\", false);\n            }\n        });\n    }\n}\n\n\n//# sourceURL=webpack:///./src/pages/MainPage.ts?");
 
 /***/ }),
 
@@ -991,6 +1014,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-1!../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./index.scss */ \"./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./src/scss/index.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/scss/index.scss?");
+
+/***/ }),
+
+/***/ "./src/scss/main.scss":
+/*!****************************!*\
+  !*** ./src/scss/main.scss ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js??ref--5-1!../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./main.scss */ \"./node_modules/css-loader/dist/cjs.js?!./node_modules/sass-loader/dist/cjs.js?!./src/scss/main.scss\");\n\nif(typeof content === 'string') content = [[module.i, content, '']];\n\nvar transform;\nvar insertInto;\n\n\n\nvar options = {\"hmr\":true}\n\noptions.transform = transform\noptions.insertInto = undefined;\n\nvar update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ \"./node_modules/style-loader/lib/addStyles.js\")(content, options);\n\nif(content.locals) module.exports = content.locals;\n\nif(false) {}\n\n//# sourceURL=webpack:///./src/scss/main.scss?");
 
 /***/ }),
 

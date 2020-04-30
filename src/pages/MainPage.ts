@@ -3,7 +3,9 @@ import Ractive from "ractive";
 import TextField from "../views/TextField";
 import Button from "../views/Button";
 
-export default class LoginPage implements IPage {
+import "../scss/main.scss";
+
+export default class MainPage implements IPage {
     private app: IApplication;
     private ractive!: Ractive;
 
@@ -12,7 +14,7 @@ export default class LoginPage implements IPage {
     }
 
     async onCreate() {
-        const t = await this.app.fetchTemplate("login.html");
+        const t = await this.app.fetchTemplate("main.html");
         this.ractive = new Ractive({
             el: "#container",
             template: t,
